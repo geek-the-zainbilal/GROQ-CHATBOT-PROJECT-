@@ -19,7 +19,7 @@ class State(TypedDict):
 def user_input(state:State):
     print("USER",state['user_message'])
     return {'user_message':state['user_message']}
-#-Defining_Function_Node1
+#-Defining_Function_Node2
 def groq_response(state:State):
     response=llm.invoke(state['user_message'])
     return {'bot_message': response.content}

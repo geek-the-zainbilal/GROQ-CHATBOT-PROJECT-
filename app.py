@@ -9,7 +9,8 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 
 # Title
 st.title("🤖 GROQ AI CHATBOT - by Malik Zain")
-
+text=st.text("A very fast ultimate chatbot which generates output for you in less than second")
+text.caption(body=str)
 # Initialize history if it doesn't exist
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -20,7 +21,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # Chat input box
-user_input = st.chat_input("Type your message...")
+user_input = st.chat_input("ENTER PROMPT HERE")
 
 # When user sends a message
 if user_input:
