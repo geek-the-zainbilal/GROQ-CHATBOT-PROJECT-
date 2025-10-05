@@ -6,9 +6,9 @@ from main import compiled_graph
 load_dotenv()
 
 # ---------- UI Title ----------
-st.title("🤖 GROQ AI CHATBOT CREATED BY - MALIK ZAIN")
+st.title("GROQ AI CHATBOT CREATED BY - MALIK ZAIN")
 
-# ---------- API Key Input ----------
+#API Key Input
 if "api_key" not in st.session_state:
     st.session_state.api_key = ""
 
@@ -19,14 +19,14 @@ st.session_state.api_key = st.text_input(
     placeholder="Paste your Groq API key here..."
 )
 
-# ---------- Validation ----------
+# Validation
 if not st.session_state.api_key:
     st.warning("Please enter your Groq API key to continue.")
     st.stop()  # Stops the app here until key is entered
 
 os.environ["GROQ_API_KEY"] = st.session_state.api_key
 
-# ---------- Chat Section ----------
+# Chat 
 user_input = st.text_input("ENTER PROMPT HERE")
 
 if "messages" not in st.session_state:
